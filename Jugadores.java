@@ -35,13 +35,16 @@ public class Jugadores{
         }
         int i = 0;
         int indiceJugador = 0;
+        int indiceArquero = 0;
         for(Jugador aux : listaJugadores){
             System.out.println(i);
             System.out.println(aux);
             i ++;
         }
-        System.out.println("ingrese el jugador que quiere patear el penal");
+        System.out.println("Ingrese el jugador que quiere patear el penal");
         indiceJugador = Integer.parseInt(System.console().readLine());
-        listaJugadores.get(indiceJugador).pateaPenal();
+        System.out.println("Ingrese arquero");
+        indiceArquero = Integer.parseInt(System.console().readLine());
+        listaJugadores.get(indiceJugador).pateaPenal(listaJugadores.get(indiceArquero));
     }
 } 

@@ -22,28 +22,41 @@ public class Jugador implements InterfazJugador{
 
     }
     @Override
-    public void pateaPenal(){
+    public void pateaPenal(Jugador arquero){
         String direccion;
         System.out.println("Patea " + this.nombre);
         System.out.println("Donde patea el penal?");
         direccion = System.console().readLine();
-        switch(direccion){
-            case "centro":
-                break;
-            case "derecha":
-                break;
-            case "izquierda":
-                break;
+        if(direccion.equals(arquero.ataja())){
+            //determinar mediante chances, si se ataja o no;
+            System.out.println("UUUUUUHHH");
+        }else{
+            System.out.println("GOOOOOOOOOL!");
         }
     }   
+    public String ataja(){
+        String resultado = "";
+        switch((int)(Math.random() * 3)){
+            case 0:
+                resultado = "izquierda";
+                break;
+            case 1:
+                resultado = "centro";
+                break;
+            case 2:
+                resultado = "derecha";
+                break;
+        }
+        return resultado;
+    }
     @Override
     public void pase(){
 
     }
+    @Override
     public void falta(){
 
     }
-
     public String getNombre(){
         return this.nombre;
     }
