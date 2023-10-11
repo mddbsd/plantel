@@ -1,4 +1,5 @@
 package clases;
+import funciones.*;
 
 public class Jugador implements InterfazJugador{
     private String nombre;
@@ -23,17 +24,17 @@ public class Jugador implements InterfazJugador{
     }
     @Override
     public void pateaPenal(Jugador arquero){
-        String direccion;
         System.out.println("Patea " + this.nombre);
         System.out.println("Donde patea el penal?");
-        direccion = System.console().readLine();
+        String direccion = Validaciones.validaDireccion(System.console().readLine());
         if(direccion.equals(arquero.ataja())){
             //determinar mediante chances, si se ataja o no;
             System.out.println("UUUUUUHHH");
         }else{
             System.out.println("GOOOOOOOOOL!");
         }
-    }   
+    }
+    @Override
     public String ataja(){
         String resultado = "";
         switch((int)(Math.random() * 3)){

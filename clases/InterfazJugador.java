@@ -5,4 +5,5 @@ public interface InterfazJugador {
     public void pateaPenal(Jugador arquero);
     public void pase();
     public void falta();
+    public String ataja();
 }
